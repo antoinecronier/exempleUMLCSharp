@@ -15,7 +15,7 @@ namespace ConsoleApp1
             {
                 if (value.Length < 12)
                 {
-                    throw new Exception();
+                    //throw new Exception();
                 }
                 base.nom = value;
             }

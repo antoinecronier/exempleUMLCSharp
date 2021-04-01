@@ -8,7 +8,14 @@ namespace ConsoleApp1
 {
     public class Utilisateur
     {
-        public const String SEPAROTOR = ".";
+        private const String SEPAROTOR = ".";
+
+        public static int NbInstance { get; set; }
+
+        public static String GetSeparator()
+        {
+            return SEPAROTOR;
+        }
 
         protected String nom;
 
@@ -39,6 +46,17 @@ namespace ConsoleApp1
         public String Fullname()
         {
             return this.Nom + SEPAROTOR + this.Prenom;
+        }
+
+        public Utilisateur()
+        {
+            NbInstance++;
+        }
+
+        public Utilisateur(String nom, String prenom) : base()
+        {
+            this.Nom = nom;
+            this.Prenom = prenom;
         }
     }
 }
